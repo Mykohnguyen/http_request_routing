@@ -6,12 +6,13 @@ class FullPost extends Component {
     state={
         postClicked : null
     }
-    componentDidUpdate(){
-        if(this.props.id){
+    componentDidMount(){
+        console.log("FULL POST",this.props.number)
+        if(this.props.number){
             if(!this.state.postClicked || this.props.id !== this.state.postClicked.id){
-                axios.get('/posts/' + this.props.id)
+                axios.get('/posts/' + this.props.number)
                     .then(response =>{
-                        console.log("fullpost updated")
+                        console.log(response,"response full")
                         this.setState({
                             postClicked : response.data
                         })
@@ -39,8 +40,9 @@ class FullPost extends Component {
             </div>
             )
         }
-        let post = <p> Please select a Post!</p>
-        return post
+        else{ 
+            return <p> Please select a Post!</p>
+        }
     }
 }
 

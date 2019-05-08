@@ -1,7 +1,21 @@
-.Posts {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
+
+.Header ul{
+    list-style: none;
+    width:100%;
+    text-align: center;
+}
+
+.Header li{
+    display:inline-block;
+    margin:0px 10px;
+}
+.Header a{
+    text-decoration: none;
+
+}
+.Header a:hover, a.active{
+    color:orange
+}
+.my-active{
+    color:green;
 }
